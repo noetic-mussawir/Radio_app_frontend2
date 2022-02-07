@@ -1,0 +1,56 @@
+<!--<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+    <img class="img-fluid"
+    style="width:100px;"
+    src="/assets/password.png"
+    alt="login" />
+                </div>
+                <h1 class="text-center">Login to Proceed</h1>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="bg">
+  
+  <br>
+<div class="wrapper fadeInDown p-5">
+    <div class="wrapper p-3">
+        <div id="formContent" class="p-1">
+          <!-- Tabs Titles -->
+      
+          <!-- Icon -->
+          <div class="fadeIn first imagesize p-3">
+            <img src="/assets/password.png" class="mb-1" id="icon" alt="User Icon" />
+            <div class="p-1 mt-1"><h1 class="text-center">Login to Proceed</h1></div>
+          </div>
+      
+          <!-- Login Form -->
+          <form (ngSubmit)="verifyLogin()">
+            <mat-form-field appearance="outline" class="container" >
+                <mat-label>Username</mat-label>
+                <input required [(ngModel)]="logincred.username" name="username" matInput placeholder="username">
+                <!-- <mat-hint>Username</mat-hint> -->
+                  </mat-form-field>
+    
+                  <mat-form-field appearance="outline" class="container" >
+                    <mat-label>Password</mat-label>
+                    <input required [(ngModel)]="logincred.password" name="password" matInput type="password" placeholder="username">
+                    <!-- <mat-hint>Username</mat-hint> -->
+                      </mat-form-field>
+                     
+                        <button mat-raised-button class="fadeIn fourth btncolor" type="submit" style="width: 300px;">Login</button>
+            <!-- <input type="submit" class="fadeIn fourth" value="Log In"> -->
+           
+          </form>
+          <br>
+          <!-- Remind Passowrd -->
+           <!-- <a class="underlineHover" href="#">Forgot Password?</a> -->
+         
+            <p class="mt"></p>
+        </div>
+      </div>
+    </div>
+  </div>

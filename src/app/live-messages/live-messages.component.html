@@ -1,0 +1,323 @@
+<!-- Begin::Links -->
+
+<head><base href="../../">
+<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+<meta charset="utf-8" />
+<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
+<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
+<meta property="og:url" content="https://keenthemes.com/metronic" />
+<meta property="og:site_name" content="Keenthemes | Metronic" />
+<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+<!--begin::Fonts-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+<!--end::Fonts-->
+<!--begin::Page Vendor Stylesheets(used by this page)-->
+<link href="/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="application/css" />
+<!--end::Page Vendor Stylesheets-->
+<!--begin::Global Stylesheets Bundle(used by all pages)-->
+<link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="application/css" />
+<link href="/assets/css/style.bundle.css" rel="stylesheet" type="application/css" />
+<!--end::Global Stylesheets Bundle-->
+</head>  
+
+<!-- End::Links -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="example-container">
+
+
+
+
+
+
+
+
+<mat-drawer-container class="example-container">
+
+<mat-drawer #drawer mode="side" class="example-drawer"  style="padding-top: 20px; padding-bottom: 50px;">
+
+
+<br>
+<br>
+<div>
+<h3 style="text-align: center;">
+Choose Filters
+</h3>
+
+<form #Form="ngForm" (ngSubmit) = "onSubmit()">
+
+<div class="container">
+
+<div>
+<mat-form-field class="example-full-width" appearance="fill">
+<mat-label >Shortcode</mat-label>
+<mat-select [(ngModel)]="filtersms.shortcode" [ngModelOptions]="{standalone: true}">
+	<mat-option value="">
+		All
+		</mat-option>
+
+	<mat-option value="8989">
+8989
+</mat-option>
+<mat-option value="3636">
+3636
+</mat-option>
+<mat-option value="2600">
+2600
+</mat-option>
+<mat-option  value="6278">
+6278
+</mat-option>
+</mat-select>
+</mat-form-field>
+</div>
+<div>
+<mat-form-field class="example-full-width" appearance="fill">
+<mat-label>Keyword</mat-label>
+<input matInput placeholder="Ex. aha, phm" name="keyword" [(ngModel)]="filtersms.keyword">
+</mat-form-field>
+</div>
+<div>
+<mat-form-field class="example-full-width" appearance="fill">
+<mat-label>Msisdn</mat-label>
+<input matInput placeholder="Ex. 923333333333" name="msisdn" [(ngModel)]="filtersms.msisdn">
+</mat-form-field>
+</div>
+
+<!--	<div>
+<mat-form-field appearance="fill">
+<mat-label>Enter a date range</mat-label>
+<mat-date-range-input [rangePicker]="picker">
+<input matStartDate placeholder="Start date" name="filtersms.date_Start"[(ngModel)]="filtersms.date_Start">
+<input matEndDate placeholder="End date" name= "filtersms.date_End"[(ngModel)]="filtersms.date_End">
+</mat-date-range-input>
+<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+
+</div> -->
+
+<div>
+
+<mat-form-field appearance="fill">
+<mat-label>Start Date</mat-label>
+<input matInput [matDatepicker]="picker" placeholder="mm/dd/yyyy" name="filtersms.date_Start" [(ngModel)]="filtersms.date_Start">
+<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+</div>
+<div> 
+<mat-form-field appearance="fill">
+<mat-label>End Date</mat-label>
+<input matInput [matDatepicker]="picker1" placeholder="mm/dd/yyyy" name= "filtersms.date_End" [(ngModel)]="filtersms.date_End">
+<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+<mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+
+
+</div>
+
+
+</div>
+<div class="container">
+<button mat-raised-button type="submit" class="mr-1">Submit</button>     
+
+<button mat-raised-button color="warn" type="reset">Clear</button>     
+</div>
+
+</form> 
+
+<!--<div  class="bottomleft">
+<button mat-fab class="bg-danger text-light" (click)="logout()"><mat-icon>power_settings_new</mat-icon></button>     
+</div>-->
+
+
+</div>
+<!--END OF matdrawer(Filters)-->    
+</mat-drawer>
+
+
+<mat-drawer-content class="bgcolor" style="padding-right: 30px; padding-left: 50px;  padding-top: 5px;">
+<!--begin::Content-->
+<!--<div id="myInput" >	<input type="text" placeholder="Search for sms.." title="Type in a name"/> <button class="bg-warning text-white" mat-raised-button type="submit" style="margin-left: 20px;">Search</button></div>
+-->
+
+
+
+<!---->
+
+
+
+
+
+
+
+<!--begin::Toolbar-->
+<div class="toolbar p-1 rounded" style="background-color: rgb(182, 190, 190); margin-bottom: 2px;"id="kt_toolbar">
+	<!--begin::Container-->
+	<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+		<!--begin::Page title-->
+		<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+			<!--begin::Title-->
+			<h3 class="d-flex align-items-center fw-bolder fs-3 my-1 text-light">Live Radio Messages</h3>
+			<!--end::Title-->
+			<!--begin::Separator-->
+			
+			<!--end::Separator-->
+			<!--begin::Breadcrumb-->
+			
+			<!--end::Breadcrumb-->
+		</div>
+		<span class="example-spacer"></span>
+		<!--end::Page title-->
+		<!--begin::Actions-->
+		<div class="d-flex align-items-center gap-2 gap-lg-3">
+			<!--begin::Filter menu-->
+			<div class="m-0">
+				<!--begin::Menu toggle-->
+				
+				<!--end::Menu toggle-->
+				<!--begin::Menu 1-->
+				
+				<!--end::Menu 1-->
+			</div>
+			<!--end::Filter menu-->
+			<!--begin::Secondary button-->
+			<!--end::Secondary button-->
+			<!--begin::Primary button-->
+			<a class="btn btn-sm btn-primary" (click)="drawer.toggle()" style="margin-right:2px">Apply Filters</a>
+			<a class="btn btn-sm btn-primary" (click)="logout()">Logout</a>
+			<!--end::Primary button-->
+		</div>
+		<!--end::Actions-->
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::Toolbar-->
+
+
+
+
+
+
+
+
+<!---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex-lg-row-fluid ms-lg-7 ms-xl-10">
+<!--begin::Card-->
+<div class="card">
+	
+<mat-paginator [length]="200"
+[pageSize]="50"
+aria-label="Select page">
+</mat-paginator>
+<!--Here-->
+<div class="card-body p-0 my-custom-scrollbar">
+<!--begin::Table-->
+<table class="table table-hover table-row-dashed fs-6 gy-5 my-0">
+<!--begin::Table head-->
+<thead class="d-none">
+<tr>
+
+<th>Author</th>
+<th>Title</th>
+<th>Date</th>
+</tr>
+</thead>
+<!--end::Table head-->
+<!--begin::Table body-->
+
+<tbody  *ngFor = "let data of smsdata">
+
+<tr class="parenthover">
+<td class="ps-9"> 
+
+</td> 
+<!--begin::Author-->
+<td class="w-150px w-md-175px" style="padding-left:20px">
+<p class="d-flex align-items-center text-dark">
+	<!--begin::Name-->
+	<span class="fw-bold">From  <span style="background-color: #ffc107;" class="text-white">{{data.msisdn}}</span> to {{data.shortcode}}</span>
+	<!--end::Name-->	
+</p>
+</td>
+<!--end::Author-->
+<!--begin::Title-->
+<td>
+<div class="text-dark mb-1">
+	<!--begin::Heading-->
+	<p class="text-dark">
+		<span class="fw-bolder" style="color: black;"><p><mark>{{data.sms}}</mark></p></span>
+	</p>
+	<!--end::Heading-->
+</div>
+</td>
+<!--end::Title-->
+<!--begin::Date-->
+<td class="w-100px text-end fs-7 pe-9">
+<span class="fw-bold text-muted"><p>{{data.sms_time}} | {{data.sms_date | date}}</p></span>
+</td>
+<!--end::Date-->
+</tr>
+
+
+
+
+</tbody>
+
+<!--end::Table body-->
+
+</table>
+
+<!--end::Table-->
+
+
+</div>
+</div>
+<!--end::Card-->
+</div>
+<!--end::Content-->
+
+</mat-drawer-content>
+
+</mat-drawer-container>
+
+</div>
